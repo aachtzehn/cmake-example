@@ -10,7 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo "variable:"" $(Build.Repository.LocalPath)
+- script: |
+          echo "variable:"
+          echo $(Build.Repository.LocalPath)
   displayName: 'Run a one-line script'
 - script: |
     echo "pwd: "
