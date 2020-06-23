@@ -14,4 +14,4 @@ steps:
     cmakeArgs: ..
 - task: CMake@1
   inputs:
-    cmakeArgs: --build    
+    cmakeArgs: --build .  
