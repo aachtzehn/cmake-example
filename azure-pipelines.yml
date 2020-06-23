@@ -15,3 +15,11 @@ steps:
 - task: CMake@1
   inputs:
     cmakeArgs: --build .  
+- task: CmdLine@2
+  inputs:
+    script: './bin/unit_tests --gtest_output=xml:./test.xml'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/test.xml'
+    testRunTitle: 'My example test results'
