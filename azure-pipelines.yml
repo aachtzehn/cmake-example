@@ -17,8 +17,7 @@ steps:
     cmakeArgs: --build .  
 - task: CmdLine@2
   inputs:
-    script: './bin/unit_tests --gtest_output=xml:./test.xml'
-    workingDirectory: $(Build.Repository.LocalPath)
+    script: $(Build.Repository.LocalPath)/build/bin/unit_tests --gtest_output=xml:$(Build.Repository.LocalPath)/build/bin/test.xml
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
