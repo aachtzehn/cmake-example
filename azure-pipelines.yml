@@ -11,4 +11,4 @@ pool: Default
 steps:
 - task: CMake@1
   inputs:
-    cmakeArgs: 
+    cmakeArgs: -H. -Bbuild -DCMAKE_INSTALL_PREFIX:PATH=/tmp/foo
